@@ -6,7 +6,7 @@
 
 - Start container: ```docker compose up -d```
 - Stop container: ```docker compose down```
-- Vào bên trong container để thực hiện lệnh: ```docker exec -it pollution-web-1 sh```
+- Vào bên trong container để thực hiện lệnh: ```docker exec -it pollution-web-1 bash```
   - <span style="color: yellow">\### Các lệnh sau được thực hiện trong container sau khi chạy lệnh trên ###</span>
   - <span style="color: yellow">Lưu ý: Có thể sử dụng ```django-admin``` hoặc ```python manage.py``` và ```python manage.py``` phải được chạy ở thư mục app.</span>
   - Tạo Migrate: ```python manage.py makemigrations [app_label [app_label ...]]```
