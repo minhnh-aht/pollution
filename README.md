@@ -12,6 +12,7 @@
   - Tạo Migrate: ```python manage.py makemigrations [app_label [app_label ...]]```
     - ```app_label``` là tên app tương ứng muốn tạo migrate(nên dùng).
     - Nếu không để thì mặc định sẽ tạo migrate cho tất cả các app.
+  - Xem lệnh sql của migrate: ```python manage.py sqlmigrate migrate_name migrate_number```
   - Chạy Migrate: ```python manage.py migrate```
   - Tạo superuser: ```python manage.py createsuperuser```
     - Sau khi chạy lệnh thì sẽ nhập username, email, password theo hướng dẫn.
@@ -40,7 +41,9 @@
 .
 ├── .git
 ├── app
-│   ├── core
+│   ├── backend
+│   │   ├── static/
+│   │   ├── templates/
 │   │   ├── settings.py
 │   │   └── urls.py
 │   ├── app_1
