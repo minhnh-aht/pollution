@@ -21,7 +21,7 @@
 ## 2. Workflow
 1. Copy `.env.example` to `.env`
 1. Run: ```docker compose up -d```
-1. Open new terminal then run: ```docker exec -it pollution-web-1 sh```
+1. Open new terminal then run: ```docker exec -it pollution-web-1 bash```
     - Create supperuser: ```python manage.py createsuperuser```
     - Migrate database: ```python manage.py migrate```
 1. Code function ...
