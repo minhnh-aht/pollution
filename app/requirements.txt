@@ -191,6 +191,21 @@ whitenoise==5.2.0
 # The following packages are considered to be unsafe in a requirements file:
 # pip
 # setuptools
+
+# RECOMMENDED DJANGO CMS PLUGINS AND APPLICATIONS
+djangocms-history==2.1.0
+# Test: djangocms-page-meta
+djangocms-page-meta==1.2.0
+djangocms-page-sitemap==1.2.0
+djangocms-blog==1.2.3
+djangocms-link==3.1.1
+django-select2==8.1.2
+djangocms-audio==2.1.1
+djangocms-modules==1.0.0
+djangocms-light-gallery
+djangocms-transfer==1.0.1
+
+# REST API
 djangorestframework==3.14.0
 markdown==3.4.3
 django-filter==23.2

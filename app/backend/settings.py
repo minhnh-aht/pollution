@@ -81,6 +81,41 @@ INSTALLED_APPS = [
     'djangocms_frontend.contrib.image',
     'djangocms_frontend.contrib.tabs',
     'djangocms_frontend.contrib.utilities',
+
+    # Module djangocms-page-meta
+    # "filer",
+    "meta",
+    # "easy_thumbnails",
+    "djangocms_page_meta",
+
+    # Module djangocms-page-sitemap
+    "django.contrib.sitemaps",
+    "djangocms_page_sitemap",
+
+    # Module djangocms-blog
+    'aldryn_apphooks_config',
+    'parler',
+    'taggit',
+    'taggit_autosuggest',
+    # 'meta',
+    'sortedm2m',
+    'djangocms_blog',
+
+    # Module djangocms-link
+    # 'djangocms_link',
+    'django_select2',
+
+    # Module djangocms-audio
+    'djangocms_audio',
+
+    # Module djangocms-modules
+    'djangocms_modules',
+
+    # Module light_gallery
+    'light_gallery',
+    
+    # Module djangocms_transfer
+    'djangocms_transfer',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +169,37 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters',
 )
 
+META_SITE_PROTOCOL = 'http'  # set 'http' for non ssl enabled websites
+META_USE_SITES = True
+
+META_USE_OG_PROPERTIES=True
+META_USE_TWITTER_PROPERTIES=True
+META_USE_GOOGLEPLUS_PROPERTIES=True # django-meta 1.x+
+META_USE_SCHEMAORG_PROPERTIES=True  # django-meta 2.x+
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en',},
+        {'code': 'en-us',},
+        {'code': 'en-gb',},
+    ),
+    'default': {
+        'fallback': 'en',             # defaults to PARLER_DEFAULT_LANGUAGE_CODE
+        'hide_untranslated': False,   # the default; let .active_translations() return fallbacks too.
+    }
+}
+
+DJANGOCMS_LINK_TEMPLATES = [
+    ('feature', 'Featured Version'),
+]
+
+DJANGOCMS_AUDIO_TEMPLATES = [
+    ('feature', 'Featured Version'),
+]
+
+DJANGOCMS_AUDIO_ALLOWED_EXTENSIONS = ['mp3', 'ogg', 'wav']
+
+DJANGOCMS_LINK_USE_SELECT2 = True
 
 CMS_TEMPLATES = [
     # a minimal template to get started with
@@ -231,14 +297,33 @@ MEDIA_ROOT = os.path.join('/data/media/')
 
 SITE_ID = 1
 
-# REST_FRAMEWORK = {
-#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-#     'PAGE_SIZE': 10,
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         'rest_framework.authentication.BasicAuthentication',
-#         'rest_framework.authentication.SessionAuthentication',
-#     ],
-#     'DEFAULT_PERMISSION_CLASSES': [
-#         'rest_framework.permissions.IsAuthenticated',
-#     ],
-# }
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
