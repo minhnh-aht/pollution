@@ -2,7 +2,23 @@
 ---
 # Pollution
 
-## 1. Danh sách lệnh thường dùng:
+## 1. Workflow
+1. Copy `.env.example` to `.env`
+1. Run: ```docker compose up -d```
+1. Open new terminal then run: ```docker exec -it pollution-web-1 bash```
+    - Migrate database: ```python manage.py migrate```
+    - Create supperuser: ```python manage.py createsuperuser```
+1. Code function ...
+1. Run git command
+    - Commit code
+    - Pull develop
+    - Fix conflict(optional)
+    - Push
+    - Create merge request
+    - Check merge request and update code(optional)
+1. Repeat from step 3 if you still working on this project
+1. Run: ```docker compose down``` to stop container then go home :\)
+## 2. Danh sách lệnh thường dùng:
 
 - Start container: ```docker compose up -d```
 - Stop container: ```docker compose down```
@@ -17,23 +33,6 @@
   - Tạo superuser: ```python manage.py createsuperuser```
     - Sau khi chạy lệnh thì sẽ nhập username, email, password theo hướng dẫn.
   - Tạo app: ```python manage.py startapp app_name```
-
-## 2. Workflow
-1. Copy `.env.example` to `.env`
-1. Run: ```docker compose up -d```
-1. Open new terminal then run: ```docker exec -it pollution-web-1 bash```
-    - Create supperuser: ```python manage.py createsuperuser```
-    - Migrate database: ```python manage.py migrate```
-1. Code function ...
-1. Run git command
-    - Commit code
-    - Pull develop
-    - Fix conflict(optional)
-    - Push
-    - Create merge request
-    - Check merge request and update code(optional)
-1. Repeat from step 3 if you still working on this project
-1. Run: ```docker compose down``` to stop container then go home :\)
 
 ## 3. Project structure
 <!-- ─ ├ │ └ -->
